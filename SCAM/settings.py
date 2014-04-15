@@ -82,7 +82,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'static'
+STATIC_ROOT = 'staticfiles'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
