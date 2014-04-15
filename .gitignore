@@ -55,3 +55,4 @@ docs/_build/
 # Heroku
 venv
 staticfiles
+*.sqlite3
