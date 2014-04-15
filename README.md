@@ -9,7 +9,7 @@ To test locally on your machine, run the following once to install the proper pa
 ```bash
 virtualenv venv
 source venv/bin/activate
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 Then this to start the development server:
