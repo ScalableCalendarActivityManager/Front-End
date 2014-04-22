@@ -40,11 +40,18 @@ def home(request):
                 "time" : str(n2)+":"+thestr+" pm"
             })
 
-        context = {
-            "username" : request.session["username"],
-            "calendars" : ["Leisure", "Work", "School", "General", "Vanderbilt"],
-            "events" : sorted(events)
-        }
+        if request.session["username"] == "test":
+            context = {
+                "username" : request.session["username"],
+                "calendars" : ["No Calendars yet"],
+                "events" : [ {"name": "No Events yet", "date":"", "time":""}]
+            }
+        else:
+            context = {
+                "username" : request.session["username"],
+                "calendars" : ["Leisure", "Work", "School", "General", "Vanderbilt"],
+                "events" : sorted(events)
+            }
         return render(request, 'Calendar/calendar.html', context)
     else:
         context = {}
