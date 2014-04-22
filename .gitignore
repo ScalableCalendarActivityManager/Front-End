@@ -56,3 +56,4 @@ docs/_build/
 venv
 staticfiles
 *.sqlite3
+Calendar/calendarAPI.py
