@@ -9,7 +9,9 @@ from django.views.decorators.http import require_http_methods
 def home(request):
     if request.session.has_key("username"):
         context = {
-            "username" : request.session["username"]
+            "username" : request.session["username"],
+            "calendars" : ["Leisure", "Work", "School", "General", "Vanderbilt"],
+            "events" : ["My Event #1", "My Event #2", "My Event #3", "My Event #4", "My Event #1", "My Event #2", "My Event #3", "My Event #4", "My Event #1", "My Event #2", "My Event #3", "My Event #4", "My Event #1", "My Event #2", "My Event #3", "My Event #4", "My Event #1", "My Event #2", "My Event #3", "My Event #4", "My Event #1", "My Event #2", "My Event #3", "My Event #4", "My Event #1", "My Event #2", "My Event #3", "My Event #4", "My Event #1", "My Event #2", "My Event #3", "My Event #4"]
         }
         return render(request, 'Calendar/calendar.html', context)
     else:

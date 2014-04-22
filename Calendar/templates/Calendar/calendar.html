@@ -14,14 +14,18 @@
                 font-weight: bold;
                 letter-spacing: -1px;
             }
-        body {
-            padding-top: 70px;
-        }
-        .footer {
-            border-top: 1px solid #eee;
-            margin-top: 20px;
-            padding-top: 20px;
-            padding-bottom: 20px;
+            body {
+                padding-top: 70px;
+            }
+            .footer {
+                border-top: 1px solid #eee;
+                margin-top: 20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        .list-group {
+            height: 450px;
+            overflow: auto;
         }
         </style>
     </head>
@@ -59,11 +63,41 @@
                 {% endfor %}
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
-                            
+                        <div class="col-md-3">
+                            <h2 class="text-center">Calendars</h2>
+                            <div class="well">
+                                <ul class="nav nav-pills nav-stacked">
+                                {% for calendar in calendars %}
+                                    <li><a>{{ calendar }}</a></li>
+                                {% endfor %}
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-md-8">
-                            
+                        <div class="col-md-6">
+                            <h2 class="text-center">Events</h2>
+                            <div class="list-group">
+                            {% for event in events %}
+                                <a class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4 text-left">
+                                            {{ event }}
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            date
+                                        </div>
+                                        <div class="col-md-4 text-right">
+                                            time
+                                        </div>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h2 class="text-center">Other Things</h2>
+                            <div class="well">
+                                hello
+                            </div>
                         </div>
                     </div>
                 </div>
