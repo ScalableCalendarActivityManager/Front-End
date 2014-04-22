@@ -1,0 +1,76 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SCAM | Calendars</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--link rel="shortcut icon" href="#" /-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+        
+        <!-- Extra styles for special components -->
+        <style>
+            .navbar-brand {
+                font-size: 1.7em;
+                font-weight: bold;
+                letter-spacing: -1px;
+            }
+        body {
+            padding-top: 70px;
+        }
+        .footer {
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <!-- For Mobile navigation -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation bar</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{% url 'Calendar:home' %}">SCAM</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a>Welcome, {{ username }}!</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{% url 'Calendar:signout' %}">Sign out</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </header>
+            <div class="row">
+                {% for message in messages %}
+                <div{% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissable"{% endif %}>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ message }}
+                </div>
+                {% endfor %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            
+                        </div>
+                        <div class="col-md-8">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Main container -->
+        <!-- Include neccessary scripts -->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </body>
+</html>

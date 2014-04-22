@@ -5,5 +5,6 @@ from Calendar import views
 urlpatterns = patterns('',
     url(r'^$', views.home, name='home'),
     url(r'^signin/$', views.signin, name='signin'),
+    url(r'^signout/$', views.signout, name='signout'),
     url(r'^signup/$', views.signup, name='signup'),
 )

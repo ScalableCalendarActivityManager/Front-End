@@ -62,7 +62,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form method="post" action="" class="form-signin" role="form">
+                    <form method="post" action="{% url 'Calendar:signin' %}" class="form-signin" role="form">
+                        {% csrf_token %}
                         <h2 class="form-signin-heading">Sign in</h2>
                         <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
                         <input type="password" name="password" class="form-control" placeholder="Password" required>
@@ -71,7 +72,8 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <form method="post" action="" class="form-signin" role="form">
+                    <form method="post" action="{% url 'Calendar:signup' %}" class="form-signin" role="form">
+                        {% csrf_token %}
                         <h2 class="form-signin-heading">New user?<br />Create an Account.</h2>
                         <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
                         <input type="password" name="password" class="form-control" placeholder="Password" required>
@@ -87,6 +89,6 @@
          ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
     </body>
 </html>
