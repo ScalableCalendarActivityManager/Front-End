@@ -62,3 +62,6 @@ def signout(request):
     if request.session.has_key("username"):
         del request.session["username"]
     return redirect('Calendar:home')
+
+def edit_event(request):
+    return redirect('Calendar:home')
