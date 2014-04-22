@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
-import calendarAPI as api
+#import calendarAPI as api
 
 # Create your views here.
 
@@ -20,8 +20,8 @@ def signin(request):
         username = request.POST["username"]
         password = request.POST["password"]
     
-        res = api.login(username, password)
-    
+#        res = api.login(username, password)
+
     
     else:
         return HttpResponse("Bad request")
