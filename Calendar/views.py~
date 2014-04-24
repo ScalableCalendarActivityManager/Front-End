@@ -134,6 +134,6 @@ def del_viewer(request):
     if request.POST.has_key("id") and request.POST.has_key("calName") :
         viewID = request.POST["id"]
         calName = request.POST["calName"]
-        api.removeUserFromCalendar(calName, request.session["username"], viewID)
+        api.deleteEvent(calName, request.session["username"], viewID)
         return redirect('Calendar:home')
     return HttpResponse("Bad Request")

@@ -94,7 +94,7 @@
                                 {% for calendar in calendars %}
                                     <tr><td><a onclick="editCalModal('{{calendar.name}}')">{{ calendar.name }}</a></td>
                                     <td><button style="margin-left:150px" onclick="newEventModal('{{calendar.ID}}')">New Event</button></td>
-                                    <td><a class="btn" href="/calendar/viewers/{{calendar.ID}}/{{calendar.name}}/" style="margin-left:20px">Viewers</a></td></tr>
+                                    <td><a class="btn" style="margin-left:20px">Viewers</a></td></tr>
                                 {% endfor %}
                                 </table>
                             </div>
